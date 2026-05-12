@@ -4,6 +4,8 @@
 
     display: flex;
     justify-content: center;
+
+    background-color: none;
 }
 
 #container{
@@ -18,10 +20,9 @@
     height: 13vh;
 }
 
-#campo_inf{
-    gap: 10px;
-}
+.txt_inf {
+    color: var(--txt-claro);
+    margin-bottom: 17px;    
+    font-size: 20px;
 
-#campo_inf a{
-    color: var(--text-claro);
 }
