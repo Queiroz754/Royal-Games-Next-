@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: var(--fonte-padrao);
+}
+
+:root{
+    --layout-guide:80%;
+    --text-claro: #FFFFFF;
+    --rosa-neon: #FF004C;
+}
