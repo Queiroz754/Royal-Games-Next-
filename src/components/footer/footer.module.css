@@ -5,7 +5,8 @@
     display: flex;
     justify-content: center;
 
-    background-color: none;
+    background: 0;
+    background: linear-gradient(rgba(0, 0, 0, 1) 100%, rgba(34, 28, 45, 1) 30%);
 }
 
 #container{

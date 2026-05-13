@@ -5,7 +5,8 @@
     display: flex;
     justify-content: center;
 
-    background: linear-gradient(360deg, rgb(255, 255, 255) 0%, rgba(34, 28, 45, 0.555) 100%, rgba(34, 28, 45, 1) 100%);
+    background: 0;
+    background: linear-gradient(rgba(0, 0, 0, 1) 100%, rgba(34, 28, 45, 1) 30%);
 }
 
 #container {
@@ -25,13 +26,15 @@
 }
 
 #catalogo {
+    cursor: pointer;
     margin-right: 35px;
+    padding: 10px;
 }
 
-#catalogo:hover {
-    border: var(--rosa-neon);
+#login {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid var(--rosa-neon) ;
 }
 
-#login:hover {
-    border: var(--rosa-neon);
-}
