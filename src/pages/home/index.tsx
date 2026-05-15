@@ -10,22 +10,28 @@ const Home = () => {
                 <Header />
                 <section id={style.conheca}>
                     <div id={style.container}>
-                        <h1 id={style.titulo_conheca}>Conheça nossos jogos!</h1>
+                        <h1>Conheça nossos jogos!</h1>
                         <p>Navegue por títulos de todas as gerações, descubra plataformas, gêneros e detalhes completos antes de escolher sua próxima aventura. Seu próximo jogo favorito começa aqui.</p>
                     </div>
                     <img src="../imgs/Imagem Banner.svg" alt="" />
+                    <span id={style.gradient}></span>
                 </section>
                 <section>
                     <ListaProduto />
                 </section>
-                <section>
-                    <h2>Jogos online podem afetar o comportamento humano?</h2>
-                    <span></span>
-                    <div>
-                        <img src="../imgs/capa_jogo_comportamento00.png" alt="" />
-                        <img src="../imgs/capa_jogo_comportamento01.png" alt="" />
+                <section id={style.manchete}>
+                    <div id={style.container_manchete}>
+                        <div id={style.container_titulo_manchete}>
+                            <h2>Jogos online podem afetar o comportamento humano?</h2>
+                            <div id={style.linha_manchete}></div>
+                        </div>
+                        <div id={style.container_img_manchete}>
+                                <img src="../imgs/capa_jogo_comportamento00.png" alt="" />
+                                <img src="../imgs/capa_jogo_comportamento01.png" alt="" />
+                        </div>
+                            <p> Estudos indicam que jogos podem alterar o comportamento humano…?</p>
+                            <p> Principalmente quando o time resolve testar sua paciência em plena partida ranqueada.</p>
                     </div>
-                    <p> Estudos indicam que jogos podem alterar o comportamento humano…? Principalmente quando o time resolve testar sua paciência em plena partida ranqueada.</p>
                 </section>
                 <Footer />
             </main>

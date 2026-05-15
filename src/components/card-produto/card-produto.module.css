@@ -1,3 +1,55 @@
-#main {
+#container_card {
+    height: 55vh;
+    width: 25vw;
+    border-radius: 10px;
+
+
+    border: 1px solid rgb(253, 253, 253 , 0.3);
+
+
+    box-shadow: inset 6px 6px 12px 1px rgba(0,0,0,0.40) ;
+    box-shadow: inset -6px -6px 12px 1px rgba(255,255,255,0.05);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#container_card div{
+    max-width:80%;
+    height: auto;
+}
+
+#container_card img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#container_card h3 {
+    color: var(--txt-claro);
+    font-size: 1.7rem;
+
+    margin-top: 10%;
+}
+
+#container_card p {
+    color: var(--txt-claro);
+    font-size: 1.2rem;
+}
+
+#container_card button {
+    height: 10%;
+    width: 80%;
+    border: none;
+    border-radius: 10px;
+    padding: 2%;
+    margin-top: 5%;
     
+    font-size: 1.5rem;
+    font-weight: 400;
+
+    background-color: var(--rosa-neon);
+    color: var(--txt-claro);
 }
