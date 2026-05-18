@@ -14,7 +14,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
 }
 
 #container_card div{
@@ -52,4 +51,9 @@
 
     background-color: var(--rosa-neon);
     color: var(--txt-claro);
+}
+
+.admin{
+    display: none;
+    width: 40%;
 }

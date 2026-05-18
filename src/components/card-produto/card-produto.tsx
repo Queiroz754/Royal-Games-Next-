@@ -10,6 +10,8 @@ const Card = () => {
                 <h3>Stardew Valley</h3>
                 <p>R$70,00</p>
                 <button>Detalhes</button>
+                <button className={style.admin}>Excluir</button>
+                <button className={style.admin}>Editar</button>
             </article>
         </>
     )
