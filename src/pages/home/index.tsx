@@ -26,11 +26,15 @@ const Home = () => {
                             <div id={style.linha_manchete}></div>
                         </div>
                         <div id={style.container_img_manchete}>
+                            <div className={style.img_manchete}>
                                 <img src="../imgs/capa_jogo_comportamento00.png" alt="" />
+                            </div>
+                            <div className={style.img_manchete}>
                                 <img src="../imgs/capa_jogo_comportamento01.png" alt="" />
+                            </div>
                         </div>
-                            <p> Estudos indicam que jogos podem alterar o comportamento humano…?</p>
-                            <p> Principalmente quando o time resolve testar sua paciência em plena partida ranqueada.</p>
+                        <p> Estudos indicam que jogos podem alterar o comportamento humano…?</p>
+                        <p> Principalmente quando o time resolve testar sua paciência em plena partida ranqueada.</p>
                     </div>
                 </section>
                 <Footer />
