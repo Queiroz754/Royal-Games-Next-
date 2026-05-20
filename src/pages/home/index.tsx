@@ -16,7 +16,7 @@ const Home = () => {
                     <img src="../imgs/Imagem Banner.svg" alt="" />
                     <span id={style.gradient}></span>
                 </section>
-                <section>
+                <section id="catalogo">
                     <ListaProduto />
                 </section>
                 <section id={style.manchete}>
