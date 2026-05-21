@@ -1,8 +1,38 @@
 import Header from "@/src/components/header/header";
 import Footer from "@/src/components/footer/footer";
 import style from "./index.module.css";
+import { useEffect, useState } from "react";
+import { useParams } from "next/navigation";
+import { listarJogo, listarPorId } from "../../api/JogoService";
 
-const Detalhe = () => {
+interface Jogo {
+    nome: string,
+    descricao: string,
+    preco: number,
+    categoria: string[]
+}
+
+const detalheJogo = () => {
+
+    const [jogo, setJogo] = useState<Jogo>();
+    const params = useParams();
+    const id = params?.id;
+
+    async function listarJogo() {
+        try{
+            const response = await listarPorId(Number(id));
+            setJogo(response);
+        } catch (error: any){
+            console.log(error.message)
+        }
+    }
+    useEffect(() => {
+        if (!id) return;
+        setTimeout(() => {
+            listarJogo();
+        }, 1000)
+    }, [id])
+
     return (
         <>
             <Header />
@@ -11,11 +41,13 @@ const Detalhe = () => {
                     <h1>Destalhes do jogo</h1>
                     <span></span>
                     <div>
-                        <img src="../imgs/capa_jogo_detalhe.png" alt="" />
+                        {jogo ? (
+                            <>
+                            <img src="../imgs/capa_jogo_detalhe.png" alt="" />
                         <div>
-                            <h2>League of Legends</h2>
+                            <h2>{jogo?.nome}</h2>
                             <p>
-                                League of Legends (LoL) é um jogo eletrônico do gênero MOBA (Multiplayer Online Battle Arena) onde duas equipes de cinco jogadores competem entre si com o objetivo de destruir a base adversária. Cada jogador controla um campeão com habilidades únicas, exigindo estratégia, trabalho em equipe e tomada de decisões rápidas durante as partidas.O jogo possui diversos modos, mapas e estilos de jogo, além de oferecer atualizações frequentes com novos personagens, eventos e ajustes de balanceamento. League of Legends é conhecido pelo seu cenário competitivo mundial, reunindo milhões de jogadores e campeonatos profissionais ao redor do mundo.
+                                {jogo?.descricao}
                             </p>
                         </div>
                         <div>
@@ -26,7 +58,7 @@ const Detalhe = () => {
                                 </div>
                                 <div>
                                     <p>Preço:</p>
-                                    <p>R$100,00</p>
+                                    <p>{jogo.preco}</p>
                                 </div>
                                 <div>
                                     <p>Plataformas:</p>
@@ -36,10 +68,12 @@ const Detalhe = () => {
                             <div>
                                 <div>
                                     <p>Gênero:</p>
-                                    <p>MOBA</p>
+                                    <p>{jogo.categoria}</p>
                                 </div>
                             </div>
                         </div>
+                        </>
+                        ) : (<p>Carregando produto...</p>)}
                     </div>
                 </section>
             </main>
@@ -47,4 +81,4 @@ const Detalhe = () => {
         </>
     )
 }
-export default Detalhe;
+export default detalheJogo;

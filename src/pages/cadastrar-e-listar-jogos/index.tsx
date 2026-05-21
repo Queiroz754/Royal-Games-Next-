@@ -13,47 +13,46 @@ interface Genero {
     nome: string
 }
 
-// interface Plataforma {
-//     plataformaID: number,
-//     nome: string
-// }
+interface Plataforma {
+    plataformaID: number,
+    nome: string
+}
 
-// interface Classificacao {
-//     ClassificacaoID: number,
-//     nome: string
-// }
+interface Classificacao {
+    ClassificacaoID: number,
+    nome: string
+}
 
 const Cadastrar = () => {
 
     const [generos, setGenero] = useState<Genero[]>([]);
-    // const [plataformas, setPlataforma] = useState<Plataforma[]>([]);
-    // const [classificacao, setClassificacao] = useState<Classificacao[]>([]);
+    const [plataformas, setPlataforma] = useState<Plataforma[]>([]);
+    const [classificacao, setClassificacao] = useState<Classificacao[]>([]);
 
     const [nome, setNome] = useState<string>("");
     const [descricao, setDescricao] = useState<string>("");
     const [preco, setPreco] = useState<string>("");
 
     const [generosSelecionados, setGeneroSelecionados] = useState<number[]>([]);
-    // const [PlataformasSelecionadas, setPlataformaSelecionados] = useState<number[]>([]);
-    // const [ClassificacoesSelecionadas, setClassificacaoSelecionados] = useState<number[]>([]);
+    const [PlataformasSelecionadas, setPlataformaSelecionados] = useState<number[]>([]);
+    const [ClassificacoesSelecionadas, setClassificacaoSelecionados] = useState<number[]>([]);
 
     async function listarGeneroEmProduto() {
         const listaGenero = await listarGenero();
         setGenero(listaGenero.data);
-        console.log(listaGenero.data)
     }
 
-    // async function listarPlataformaEmProduto() {
-    //     const listaPlataforma = await listarPlataforma();
-    //     setPlataforma(listaPlataforma.data);
-    //     console.log(listaPlataforma.data)
-    // }
+    async function listarPlataformaEmProduto() {
+        const listaPlataforma = await listarPlataforma();
+        setPlataforma(listaPlataforma.data);
+        console.log(listaPlataforma.data)
+    }
 
-    // async function listarClassificacaoEmProduto() {
-    //     const listaClassificacao = await listarClassificacao();
-    //     setPlataforma(listaClassificacao.data);
-    //     console.log(listaClassificacao.data)
-    // }
+    async function listarClassificacaoEmProduto() {
+        const listaClassificacao = await listarClassificacao();
+        setPlataforma(listaClassificacao.data);
+        console.log(listaClassificacao.data)
+    }
 
     async function Cadastrar(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
@@ -78,7 +77,8 @@ const Cadastrar = () => {
 
     useEffect(() => {
         listarGeneroEmProduto();
-        // listarPlataformaEmProduto();
+        listarPlataformaEmProduto();
+        listarClassificacaoEmProduto();
     }, [])
 
 
@@ -98,27 +98,18 @@ const Cadastrar = () => {
                                 <input type="number" name="valor" value={preco} onChange={(e) => setPreco(e.target.value)}/>
                                 <label htmlFor="genero">Gênero</label>
                                 <select name="genero" id="">
-
-                                    {generos.map((item) => (<option value={item.generoID} key={item.generoID}>{item.nome}</option>
-                                    )
-                                    )}
+                                    {generos.map((item) => (<option value={item.generoID} key={item.generoID}>{item.nome}</option>))}
                                 </select>
                             </div>
                             <label htmlFor="classificacao">Classificação Indicativa</label>
                             <select name="classificacao" id="">
-                                <option value="">18</option>
-                                <option value="">16</option>
-                                <option value="">10</option>
-                                <option value="">L</option>
+                                {classificacao.map((item) => (<option value={item.ClassificacaoID} key={item.ClassificacaoID}>{item.nome}</option>))}
                             </select>
                         </div>
                         <div>
                             <label htmlFor="plataformar">Plataforma</label>
                             <select name="plataformar" id="">
-                                <option value="">PC</option>
-                                <option value="">XBOX Series </option>
-                                <option value="">Playstation 5</option>
-                                <option value="">Nintendo Switch 2</option>
+                                {plataformas.map((item) => (<option value={item.plataformaID} key={item.plataformaID}>{item.nome}</option>))}
                             </select>
                             <label htmlFor="imagem">Imagem</label>
                             <input type="text" name="imagem" />

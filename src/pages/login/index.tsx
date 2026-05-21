@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { ToastContainer, toast } from "react-toastify";
 import { erro, notificacao } from "@/src/utils/toast";
+// import { console } from "inspector";
 
 const Login = () => {
     const [email, setEmail] = useState<string>("");
@@ -15,7 +16,6 @@ const Login = () => {
         e.preventDefault();
         try {
             await login(email, senha);
-            console.log(1)
             notificacao("Login bem-sucedido.")
             setTimeout(() => {
                 router.push("/home");
@@ -28,7 +28,6 @@ const Login = () => {
 
     return (
         <>
-            <ToastContainer />
             <main id={style.main}>
                 <div id={style.container_login}>
                     <div id={style.img_login}>
@@ -41,11 +40,13 @@ const Login = () => {
                         <form action="" id={style.form_login} onSubmit={autenticar}>
                             <div>
                                 <label htmlFor="email">E-mail</label>
-                                <input type="text" name="email" required value={email} onChange={(e) => setEmail(e.target.value)} />
+                                <input type="text" name="email" required value={email} 
+                                onChange={(e) => setEmail(e.target.value)} />
                             </div>
                             <div>
                                 <label htmlFor="senha">Senha</label>
-                                <input type="password" name="senha" required value={senha} onChange={(e) => setSenha(e.target.value)} />
+                                <input type="password" name="senha" required value={senha} 
+                                onChange={(e) => setSenha(e.target.value)} />
                             </div>
                             <button>Entrar</button>
                         </form>

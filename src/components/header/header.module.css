@@ -22,6 +22,7 @@
 #campo_input a {
     color: var(--txt-claro);
     font-size: 25px;
+    text-decoration: none;
 }
 
 #catalogo {
@@ -35,5 +36,19 @@
     padding: 10px;
     border-radius: 5px;
     border: 2px solid var(--rosa-neon) ;
+    text-decoration: none;
+}
+
+#deslogar {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid var(--rosa-neon) ;
+    background: none;
+
+    color: var(--txt-claro);
+    font-size: 25px;
+
+    display: none;
 }
 
